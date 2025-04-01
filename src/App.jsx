@@ -7,6 +7,7 @@ import {
    BrowserRouter,
    Routes, 
    Route } from 'react-router-dom';
+import Footer from './components/Footer';
 
 const App = () => {
 
@@ -59,9 +60,11 @@ const App = () => {
       <Routes>
 
         <Route path="/" element={<Home images={images} loader={loader} saved={saved} setSaved={setSaved} />} />
-        <Route path="/saved" element={<Saved saved={saved} loader={loader} />} />
+        <Route path="/saved" element={<Saved saved={saved} loader={loader} setSaved={setSaved} />} />
 
       </Routes>
+
+      <Footer/>
 
     </BrowserRouter>
   );

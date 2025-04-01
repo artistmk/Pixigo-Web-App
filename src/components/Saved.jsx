@@ -1,10 +1,16 @@
 import React from 'react'
 import Loader from './Loader';
 
-const Saved = ({saved, loader}) => {
+const Saved = ({saved, loader, setSaved}) => {
+
+  let myStyle = {
+    minHeight: "70vh",
+    margin: "40px auto"
+  }
+
   return (
   <>
-        <div className="container-fluid text-center my-4" id="top">
+        <div className="container-fluid text-center my-4" id="top" style={myStyle}>
         
         {loader || saved.length === 0 ? (
            <>
@@ -13,7 +19,7 @@ const Saved = ({saved, loader}) => {
           </>
         ) : (
           <>
-            <div className="flex">
+            <div className="flex" >
 
               {saved.map((image) => {
 
@@ -28,9 +34,15 @@ const Saved = ({saved, loader}) => {
         )}
 
         {saved.length != 0 && (
+          <>
+          <div className='container' style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "4rem"}}>
+
           <a href="#top" className="btn btn-warning my-5">
             Back To Top
           </a>
+          <button onClick={() => setSaved("")} className='btn btn-danger'>Clear Cart</button>
+          </div>
+          </>
         )}
       </div>
   </>

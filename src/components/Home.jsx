@@ -76,7 +76,7 @@ const Home = ({ images, loader, saved, setSaved }) => {
         {images.length != 0 && (
           <a href="#top" className="btn btn-warning my-5">
             Back To Top
-          </a>
+          </a> 
         )}
       </div>
     </>
