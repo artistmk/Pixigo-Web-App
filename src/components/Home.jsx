@@ -5,6 +5,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Home = ({ images, loader, saved, setSaved }) => {
 
+  let myStyle = {
+    minHeight: "70vh",
+    margin: "40px auto"
+  }
+
   const saveImage = (img) => {
     let flag = true;
    
@@ -54,7 +59,7 @@ const Home = ({ images, loader, saved, setSaved }) => {
     <>
     <ToastContainer />
 
-      <div className="container-fluid text-center my-4" id="top">
+      <div className="container-fluid text-center my-4" id="top" style={myStyle}>
         
         {loader ? (
           <Loader />
